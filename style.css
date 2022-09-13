@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+:root {
+  font-size: 62.5%;
+
+  --fs-heading: normal 900 2.4rem 'Inter', sans-serif;
+
+  --fs-text: normal 400 1.6rem 'Inter', sans-serif;
+
+  --fc-text: #a1a1aa;
+
+  --card-bg: #2a2634;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url(./assets/bg1.svg) no-repeat;
+  background-color: #131317;
+  background-position: center;
+  background-size: cover;
+
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.2rem 4.2rem;
+  gap: 3.2rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header .avatar {
+  width: 12rem;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%) border-box;
+  border: 4px solid transparent;
+  border-radius: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  width: clamp(32rem, 45vw + 5rem, 58rem);
+  padding: 2.4rem 3.2rem 3.2rem;
+
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%) border-box;
+
+  background-size: 500%;
+  animation: animate 3s linear infinite alternate;
+  border-top: 4px solid transparent;
+  border-radius: 8px;
+}
+
+.card h1 {
+  font: var(--fs-heading);
+  color: white;
+}
+
+.card p {
+  font: var(--fs-text);
+  color: var(--fc-text);
+  letter-spacing: -0.18px;
+
+  margin-top: 12px;
+  margin-bottom: 2.4rem;
+}
+
+.games-wrapper {
+  display: flex;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.games-wrapper img {
+  width: 9rem;
+  height: 12rem;
+
+  border-radius: 8px;
+
+  transition: all 0.3s;
+}
+
+.games-wrapper img:hover {
+  transform: translateY(-5px);
+}
+
+.chanel-wrapper {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.chanel-wrapper img {
+  width: 7rem;
+  border: 2px solid #443e54;
+  border-radius: 100px;
+
+  transition: all 0.3s;
+}
+
+.chanel-wrapper img:hover {
+  transform: translateY(-5px);
+  border: 2px solid rgba(52, 238, 0, 0.327);
+  filter: drop-shadow(0 0 2px rgba(52, 238, 0, 0.437));
+}
+
+.redes-wrapper {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.redes-wrapper svg {
+  width: 3.2rem;
+  transition: all 0.3s;
+}
+
+.redes-wrapper a:nth-child(odd) svg {
+  fill: #9a35ff;
+}
+.redes-wrapper a:nth-child(even) svg {
+  fill: rgb(52, 238, 0);
+}
+
+.redes-wrapper a:nth-child(odd) svg:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0px 3px #9a35ff);
+}
+.redes-wrapper a:nth-child(even) svg:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0px 3px rgb(52, 238, 0));
+}
+
+/*Responsivity*/
+
+@media (max-width: 980px) {
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .games-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*Animations*/
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
